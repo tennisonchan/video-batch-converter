@@ -6,8 +6,10 @@ node index.js [directory]
 ```
 
 ### Options
--t, --threshold *number*   The video will split evenly when its duration is greater than the threshold. Threshold value in second.
--f, --format *string*      The output format of the videos.
--s, --size *string*        The output converted size of the videos.
--i, --input *directory*    The input directory to process.
--h, --help               Print this usage guide.
+| Options | Description  |  Type  | Default value |
+| -------------------- | ------------ | ------------   | ------------ |
+| `-t, --threshold` | The video will split evenly when its duration is greater than the threshold. Threshold value in second. |  *number*  | 300 |
+| `-f, --format` | The output format of the videos. |  *string*  | mp4 |
+| `-s, --size` | The output converted size of the videos. |  *string*  | 480x? |
+| `-i, --input` | The input directory to process. |  *directory*  | N/A |
+| `-h, --help ` | Print this usage guide. |  N/A  | N/A |
