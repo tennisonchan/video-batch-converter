@@ -3,28 +3,12 @@ const getUsage = require('command-line-usage')
 const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
 const path = require('path');
-
-const optionDefinitions = [
-  { name: 'threshold', alias: 't', type: Number, defaultValue: 5 * 60, description: 'The video will split evenly when its duration is greater than the threshold. Threshold value in second.' },
-  { name: 'format', alias: 'f', type: String, defaultValue: 'mp4', description: 'The output format of the videos.' },
-  { name: 'size', alias: 's', type: String, defaultValue: '480x?', description: 'The output converted size of the videos.' },
-  { name: 'input', alias: 'i', type: String, defaultOption: true, typeLabel: '[underline]{directory}', description: 'The input directory to process.' },
-  { name: 'help', alias: 'h', type: Boolean, description: 'Print this usage guide.' }
-];
+const {optionDefinitions, usageDefinitions} = require('./option-definitions');
 
 const options = commandLineArgs(optionDefinitions);
 
 if (options.help) {
-  console.log(
-    getUsage([{
-      header: 'Video Batch Converter',
-      content: 'Resize and convert videos in batches.'
-    }, {
-      header: 'Options',
-      optionList: optionDefinitions
-    }])
-  );
-
+  console.log(getUsage(usageDefinitions));
   process.exit(1);
 }
 
